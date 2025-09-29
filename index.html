@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>موقع بسيط - مهندس أحمد</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#0ea5a4;
+      --dark:#0f172a;
+      --muted:#6b7280;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Cairo',sans-serif;
+      background:linear-gradient(180deg,#f8fafc,#ffffff);
+      color:var(--dark);
+      line-height:1.6;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    header{background:transparent;padding:12px 0;}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .logo{width:44px;height:44px;border-radius:8px;background:var(--accent);display:grid;place-items:center;color:white}
+    nav ul{display:flex;gap:18px;align-items:center;list-style:none;margin:0;padding:0}
+    nav a{color:var(--dark);text-decoration:none;font-weight:600}
+    .menu-toggle{display:none;background:none;border:1px solid rgba(15,23,42,0.06);padding:8px;border-radius:8px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center;margin:36px 0}
+    .hero h1{font-size:36px;margin:0 0 12px}
+    .hero p{margin:0 0 18px;color:var(--muted)}
+    .cta{display:inline-block;background:var(--accent);color:white;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
+    .card{background:var(--card);padding:16px;border-radius:14px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .card h3{margin:0 0 8px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(14,165,164,0.08);color:var(--accent);font-weight:700}
+    form{display:grid;gap:10px}
+    input,textarea{width:100%;padding:10px;border:1px solid #e6e9ee;border-radius:8px}
+    button.primary{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:0;font-weight:700}
+    footer{margin:40px 0 20px;color:var(--muted);text-align:center}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      nav ul{display:none}
+      .menu-toggle{display:block}
+    }
+    @media (max-width:480px){
+      .hero h1{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">م</div>
+        <div>
+          <div>مهندس أحمد</div>
+          <small style="color:var(--muted);font-weight:600">مطور ويب ومبرمج C++</small>
+        </div>
+      </div>
+      <nav>
+        <button class="menu-toggle" id="menuBtn" aria-expanded="false">☰</button>
+        <ul id="navList">
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#projects">المشاريع</a></li>
+          <li><a href="#about">عني</a></li>
+          <li><a href="#contact">تواصل</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="hero" id="home">
+      <div>
+        <h1>أهلاً بك! أنا مهندس أحمد — مطور ويب مبتدئ إلى متوسط</h1>
+        <p>موقع تعريفي بسيط يمكنك استخدامه كقالب لعرض مشاريعك، مهاراتك وطريقة التواصل معك. الكود نظيف وسهل التعديل.</p>
+        <a class="cta" href="#projects">شوف مشاريعي</a>
+        <div style="margin-top:18px" class="card">
+          <strong>مهارات:</strong>
+          <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">C++</span>
+          </div>
+        </div>
+      </div>
+      <aside>
+        <div class="card" style="text-align:center">
+          <img src="profile.jpg" alt="صورتي" style="width:150px;height:150px;border-radius:50%;object-fit:cover;margin-bottom:12px">
+          <h3>مهندس أحمد</h3>
+          <p style="color:var(--muted)">طالب بكلية الحاسبات والمعلومات</p>
+        </div>
+      </aside>
+    </section>
+    <section id="projects">
+      <h2>المشاريع</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>موقع شخصي بسيط</h3>
+          <p style="color:var(--muted);margin:8px 0">قالب HTML/CSS ثابت يعرض نبذة ومشاريع.</p>
+        </div>
+        <div class="card">
+          <h3>آلة حاسبة بسيطة (JS)</h3>
+          <p style="color:var(--muted);margin:8px 0">مشروع لتطبيق عملي على DOM وJS.</p>
+        </div>
+        <div class="card">
+          <h3>برنامج C++ لحساب الدرجات</h3>
+          <p style="color:var(--muted);margin:8px 0">مشروع Console صغير بلغة C++ لتدريبك.</p>
+        </div>
+      </div>
+    </section>
+    <section id="about" style="margin-top:26px">
+      <h2>عني</h2>
+      <div class="card" style="margin-top:12px">
+        <p style="margin:0;color:var(--muted)">أنا طالب في كلية الحاسبات والمعلومات - جامعة طنطا. أتعلم C++ حالياً وأعمل على مشاريع ويب بسيطة. هدفي البدء في العمل الحر خلال الأشهر القادمة.</p>
+      </div>
+    </section>
+    <section id="contact" style="margin-top:26px">
+      <h2>تواصل معي</h2>
+      <div class="card" style="margin-top:12px">
+        <form onsubmit="handleSubmit(event)">
+          <label>الاسم</label>
+          <input type="text" id="name" placeholder="أدخل اسمك" required>
+          <label>البريد الإلكتروني</label>
+          <input type="email" id="email" placeholder="example@mail.com" required>
+          <label>رسالة</label>
+          <textarea id="message" rows="5" placeholder="اكتب رسالتك هنا" required></textarea>
+          <button class="primary" type="submit">إرسال</button>
+        </form>
+        <p id="response" style="margin-top:10px;color:var(--accent);display:none">تم استلام الرسالة (وهي محاكاة بدون سيرفر).</p>
+      </div>
+    </section>
+    <footer>
+      © 2025 مهندس أحمد — موقع تعريفي بسيط
+    </footer>
+  </main>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navList=document.getElementById('navList');
+    menuBtn.addEventListener('click',()=>{
+      const open=navList.style.display==='flex';
+      navList.style.display=open?'none':'flex';
+      navList.style.flexDirection='column';
+      menuBtn.setAttribute('aria-expanded',String(!open));
+    });
+    function handleSubmit(e){
+      e.preventDefault();
+      document.getElementById('response').style.display='block';
+      setTimeout(()=>{
+        document.getElementById('response').textContent='شكراً! تم إرسال رسالتك (محاكاة).';
+      },600);
+    }
+  </script>
+</body>
+</html>
