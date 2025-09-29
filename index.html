@@ -36,7 +36,18 @@
     .hero p{margin:0 0 18px;color:var(--muted)}
     .cta{display:inline-block;background:var(--accent);color:white;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
-    .card{background:var(--card);padding:16px;border-radius:14px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .card{
+  background:var(--card);
+  padding:18px;
+  border-radius:18px;                /* زوايا أكثر انسيابية */
+  box-shadow:0 10px 25px rgba(0,0,0,0.12); /* ظل أوضح */
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 28px rgba(0,0,0,0.18);
+}
+
     .card h3{margin:0 0 8px}
     .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(14,165,164,0.08);color:var(--accent);font-weight:700}
     form{display:grid;gap:10px}
